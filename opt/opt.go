@@ -5,12 +5,14 @@ type Suffix string
 
 // Boolean flag types with constants
 type MultipleFlag bool
+
 const (
 	Multiple   MultipleFlag = true
 	NoMultiple MultipleFlag = false
 )
 
 type ZeroFlag bool
+
 const (
 	Zero   ZeroFlag = true
 	NoZero ZeroFlag = false
@@ -24,6 +26,6 @@ type Flags struct {
 }
 
 // Configure methods for the opt system
-func (s Suffix) Configure(flags *Flags)     { flags.Suffix = s }
+func (s Suffix) Configure(flags *Flags)       { flags.Suffix = s }
 func (m MultipleFlag) Configure(flags *Flags) { flags.Multiple = m }
 func (z ZeroFlag) Configure(flags *Flags)     { flags.Zero = z }
